@@ -16,3 +16,15 @@ Type annotations are little pieces of code that indicate what type a variable is
 let youAreAwesome: boolean;
 youAreAwesome = true;
 ```
+
+## tsconfig.json
+
+* **"compilerOptions"**, which is a nested object that contains the rules for the TypeScript compiler to enforce.
+
+  * **"target"**, the value "es2020" means the project will be using the 2020 version of EcmaScript standards for JavaScript.
+
+  * **"module"**, this project will be using "ESModule" syntax to import and export modules.
+
+  * **"strictNullChecks"**, variables can only have null or undefined values if they are explicitly assigned those values.
+
+  * **"include"** that determines what files the compiler applies the rules to. In this case ["**/*.ts"] means the compiler should check every single file that has a .ts extension.
