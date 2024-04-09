@@ -1,12 +1,15 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 1280px;
+  max-width: 100%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-  height: 6em;
+  height: 4em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
@@ -16,6 +19,12 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+.logo.cypress:hover {
+  filter: drop-shadow(0 0 2em #526277aa);
+}
+.logo.i18n:hover {
+  filter: drop-shadow(0 0 2em #009688aa);
 }
 
 @keyframes logo-spin {
@@ -27,14 +36,83 @@
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@keyframes logo-heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  65% {
+    transform: scale(0.9);
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
+@keyframes logo-skew {
+  0% {
+    transform: skewX(0deg);
+  }
+  50% {
+    transform: skewX(10deg);
+  }
+  100% {
+    transform: skewX(-10deg);
+  }
+}
+
+@keyframes logo-shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  20% {
+    transform: rotate(-10deg);
+  }
+  30% {
+    transform: rotate(10deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(1) .logo {
+    animation: logo-heartbeat infinite 2s;
+  }
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+  a:nth-of-type(3) .logo {
+    animation: logo-shake infinite 3s;
+  }
+  a:nth-of-type(4) .logo {
+    animation: logo-spin infinite 2s alternate;
+  }
+  a:nth-of-type(5) .logo {
+    animation: logo-skew infinite 2s alternate;
+  }
+
+}
+
 .card {
-  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .read-the-docs {
