@@ -28,3 +28,72 @@ youAreAwesome = true;
   * **"strictNullChecks"**, variables can only have null or undefined values if they are explicitly assigned those values.
 
   * **"include"** that determines what files the compiler applies the rules to. In this case ["**/*.ts"] means the compiler should check every single file that has a .ts extension.
+
+## Functions
+
+### TypeScript Parameter Type Annotations
+
+```ts
+function greet(noun: string) {
+  console.log(`Hello, ${noun}!`);
+}
+
+greet('World'); // Prints: Hello, World  
+
+greet(2020); // Argument of type 'number' is not assignable to parameter of type 'string'.
+```
+
+### TypeScript Optional Parameter
+
+```ts
+function greet(name?: string) {
+  console.log(`Hello, ${ name || 'stranger' }!`);
+}
+
+greet(); // Prints: Hello, stranger!
+```
+
+### TypeScript Default Parameters
+
+```ts
+
+function exponentiation(power = 1) {
+  console.log(4 ** power);
+}
+
+exponentiation(); // Prints: 4
+
+exponentiation(4); // Prints: 256
+
+exponentiation(true); // Error: Argument of type 'true' is not assignable to parameter of type 'number | undefined'.
+```
+
+### TypeScript Inferring Return Types
+
+```ts
+function factOrFiction() {
+  return Math.random() >= .5 ? 'true' : 'false';
+}
+
+const myAnswer : boolean = factOrFiction(); // Type 'string' is not assignable to type 'boolean'
+```
+
+### TypeScript Void Return Type
+
+```ts
+function sayHello(): void { 
+    console.log('Hello!')
+} 
+```
+
+### TypeScript Explicit Return Types
+
+```ts
+function trueOrFalse(value: boolean): boolean {
+  if (value) {
+    return true;
+  }
+
+  return 'false'; // Typescript Error: Type 'string' is not assignable to type 'boolean'.
+}
+```
