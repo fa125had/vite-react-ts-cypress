@@ -16,6 +16,8 @@ function App() {
     fa: "Persian",
   };
 
+  const isRTL = i18n.dir() === "rtl";
+
   return (
     <>
       <div>
@@ -35,7 +37,10 @@ function App() {
           <img src={i18nLogo} className="logo i18n" alt="i18n logo" />
         </a>
       </div>
-      <h1>{t("hello")}</h1>
+      <div className={isRTL ? "rtlContent" : "content"}>
+        <h1 className="welcome">{t("welcome")}</h1>
+        <p className="info">{t("under-construction")}</p>
+      </div>
       <div className="card">
         {Object.keys(langs).map((lang) => (
           <button

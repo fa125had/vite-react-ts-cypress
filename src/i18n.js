@@ -13,22 +13,26 @@ i18next
         resources: {
             en: {
                 translation: {
-                    "hello": "Hello, Welcome",
+                    "welcome": "Hello, Welcome",
+                    "under-construction": "This page is under construction",
                 }
             },
             nl: {
                 translation: {
-                    "hello": "Hallo, Welkom",
+                    "welcome": "Hallo, Welkom",
+                    "under-construction": "Deze pagina is in aanbouw",
                 }
             },
             ru: {
                 translation: {
-                    "hello": "Привет, Добро пожаловать",
+                    "welcome": "Привет, Добро пожаловать",
+                    "under-construction": "Эта страница находится в стадии разработки",
                 }
             },
             fa: {
                 translation: {
-                    "hello": "سلام، خوش آمدید",
+                    "welcome": "سلام، خوش آمدید",
+                    "under-construction": "این صفحه در حال ساخت است",
                 }
             }
         }
